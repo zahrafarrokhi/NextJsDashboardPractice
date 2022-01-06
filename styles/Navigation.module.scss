@@ -1,0 +1,13 @@
+.icon{
+  font-size: 1.2em;
+  font-weight: bold;
+  padding:1em;
+  &:hover{
+    color :aqua;
+  }
+}
+
+.br{
+  border-right:1px solid #e7e7e7;
+  flex:0 0 200px;
+};
