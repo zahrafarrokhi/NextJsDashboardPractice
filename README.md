@@ -16,6 +16,11 @@ Then change `global.css` to `global.scss` and add the following line:
 ```
 Dont forget to fix the import in `_app.js`!
 
+## Installing proptypes
+```sh
+npm i prop-types
+```
+
 # Coding part!!
 ## Setting up perpage layout
 [Nextjs documentation](https://nextjs.org/docs/basic-features/layouts)
