@@ -1,5 +1,5 @@
 {
-  "name": "doctorpanel",
+  "name": "dashboard-practice",
   "private": true,
   "scripts": {
     "dev": "next dev",
