@@ -16,6 +16,11 @@ Then change `global.css` to `global.scss` and add the following line:
 ```
 Dont forget to fix the import in `_app.js`!
 
+## Installing Axios
+```sh
+npm install axios
+```
+
 ## Installing proptypes
 ```sh
 npm i prop-types
