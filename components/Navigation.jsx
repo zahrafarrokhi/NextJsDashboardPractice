@@ -21,7 +21,7 @@ const Navigation =(props)=>{
          
        </div>
        <div className={`d-flex ${styles.icon}`}>
-       <Link href="/doctors">
+       <Link href="/doctor">
           <a> doctors</a>
         </Link>
         
