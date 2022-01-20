@@ -4,6 +4,7 @@ import Tabs from "../../components/Tabs";
 import styles from '../../styles/PatientInfo.module.scss'
 import DatePicker from "react-datepicker";
 import { FcPlus } from "react-icons/fc";
+import dynamic from 'next/dynamic'
 // ImageComponent
 const ImageComponent=(props)=>{
   const{data,value,onChange}= props;
@@ -155,9 +156,14 @@ const TextareaComponent=(props) => {
     </div>
   )
 }
+
+
 const Profile = () => {
   // tab
   const [select,setSelect] = useState("info")
+  const MapWithNoSSR = dynamic(() => import("../../components/Map"), {
+    ssr: false
+  });
   const proftabs = [
     {
       id: "info",
@@ -173,7 +179,7 @@ const Profile = () => {
     }
     
   ];
-  
+  const [address, setAddress] = useState({});
   const [profile, setProfile] = useState({}); // {}
   // {f_name: "atrin"}
   // {f_name: "atrin", l_name: "hojjat"}
@@ -304,16 +310,17 @@ const Profile = () => {
       {select == 'address'&&(
         <div className="d-flex">
           <div className="d-flex flex-wrap">
-            {ADDRESS_FIELDS.map((_)=>(<_.component key={_.id} data={_} value={profile[_.id]} onChange={(value)=>{
+            {ADDRESS_FIELDS.map((_)=>(<_.component key={_.id} data={_} value={address[_.id]} onChange={(value)=>{
               // let newprofile = profile;
               // newprofile[_.id]=value
               // setProfile(newprofile)
-              console.log(profile, value)
-              setProfile ({...profile, [_.id]:value})
+              setProfile ({...address, [_.id]:value})
             }}/>))}
           </div>
           <div className={`d-flex ${styles.addresscnt}`}>
-            
+            <MapWithNoSSR position={address.location} setPosition={value => {
+              setAddress({...address, location: value})
+            }}/>
           </div>
         </div>
       )}
