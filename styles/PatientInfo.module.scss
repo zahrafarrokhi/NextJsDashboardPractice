@@ -1,0 +1,38 @@
+.img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #5c5757;
+  border-radius: 50%;
+}
+.btnimg {
+  width: 2em;
+  height: 2em;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+}
+.item {
+  flex: 1 0 29%;
+  min-width: 27vw;
+  max-width: calc(100% / 3 - 4em);
+  & > input {
+    width: 100% !important;
+  }
+}
+.itemimg {
+  flex: 1 0 100%;
+  position: relative;
+}
+.textareaitem {
+  flex: 1 0 calc(100% - 4em);
+  max-width: calc(100% - 4em);
+}
+
+.textarea {
+}
+
+.addresscnt {
+  flex: 0 0 33%;
+  // background-color: red;
+}
